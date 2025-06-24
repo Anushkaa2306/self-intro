@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(20, 18, 22);
+}
+
+@font-face {
+    font-family: 'MightyMarine';
+    src: url('Beautiful\ Valentine.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Margin';
+    src: url('BunkerStencil-Regular.ttf') format('truetype');
+}
+
+.nav {
+    height: 10vh;
+    width: 100%;
+    gap: 7vw;
+    position: fixed;
+    display: flex;
+
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3a61777c;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 2vw;
+    color: rgb(237, 245, 237);
+    z-index: 3;
+    font-family: 'old';
+}
+
+.nav a:hover {
+    color: rgb(155, 245, 110);
+
+}
+
+.page1 {
+    height: 100vh;
+    width: 100%;
+    padding: 8vh 2vh;
+    display: flex;
+    padding: 0 70px;
+    justify-content: center;
+    background: linear-gradient(10deg, #a5c9c2,#1c6b5a);
+ /* background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L25zMTk4ODAtaW1hZ2Uta3d2eWFhZXguanBn.jpg'); */
+ opacity: 0.7;
+    background-size: cover;
+    align-items: center;
+   
+}
+
+.right,
+.left {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2vw 3vw;
+    flex-direction: column;
+    /* border: 6px solid rgb(11, 19, 72); */
+    color: rgb(249, 249, 251);
+}
+
+.right svg {
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    width: 110vh;
+    align-items: center;
+
+
+}
+
+.right {
+    background-color: rgb(50, 52, 54);
+    background-image: url('backimage.png');
+    background-size: cover;
+
+
+}
+
+.right .box img {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+
+
+}
+
+.right .box {
+    width: 34%;
+    height: 60%;
+    position: absolute;
+    background-color: rgb(71, 132, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right p {
+    z-index: 2;
+    font-size: 7vw;
+    margin-bottom: 55vh;
+    transform: rotate3d(0, 1, 0, 180deg);
+
+}
+
+.left h1 {
+    font-size: 17vh;
+    background: url('https://i.pinimg.com/736x/b5/dd/46/b5dd460e3d1bf07f60d915ff7a81fa7a.jpg')center;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 13px 1px rgb(6, 6, 6);
+    /* font-family: 'MightyMarine'; */
+    font-family: 'Margin';
+
+    animation: Ani 10s ease-out infinite;
+}
+
+@font-face {
+    font-family: 'old';
+    src: url('OldNewspaperTypes.ttf') format('truetype');
+}
+
+.left p {
+    font-size: 3vh;
+    font-family: 'old';
+    color:#f7fbfd;
+    text-shadow: px 2px 3px black;
+}
+
+@keyframes Ani {
+    to {
+        background-position-x: -250px;
+
+    }
+}
+
+.page2 {
+    height: 100vh;
+    width: 100%;
+    padding: 8vh 2vh;
+    background-color: rgb(50, 52, 54);
+      /* background-image: url('');
+    background-size: cover; */
+    padding: 20vw 30vw;
+}
+
+.page2-img {
+    height: 70vh;
+    width: 55vh;
+    position: absolute;
+    filter: grayscale(80%);
+    z-index: 2;
+    right: 6%;
+    opacity: 2;
+    top: 116%;
+    object-fit: cover;
+    animation: profile 2s ease-in-out 2s 1 forwards;
+}
+
+.page2-img2 {
+    height: 70vh;
+    width: 55vh;
+    position: absolute;
+    /* filter: grayscale(80%); */
+    z-index: 2;
+    right: 6%;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    top: 116%;
+    object-fit: cover;
+    animation: profile3 2s ease-in-out 2s 1 forwards;
+}
+
+@keyframes profile3 {
+    from {
+        opacity: 0.1;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 0.3;
+        transform: translateX(-3px);
+    }
+}
+
+@keyframes profile {
+    from {
+        opacity: 0.2;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 2;
+        transform: translateX(-3px);
+    }
+}
+
+.page2 h2 {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    top: 130%;
+    font-size: 28px;
+    font-family: 'old';
+    color: beige;
+    opacity: 0;
+    animation: profile2 2s ease-in-out 2s 1 forwards;
+}
+
+@keyframes profile2 {
+    from {
+        opacity: 0.2;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 2;
+        transform: translateX(3px);
+    }
+}
+
+h2 p {
+    color: rgb(247, 216, 62);
+
+}
+
+.page3 {
+    height: 100vh;
+    width: 100%;
+    padding: 8vh 2vh;
+    padding: 0 70px;
+    top: 10%;
+     background-image: url('https://img.freepik.com/premium-photo/abstract-green-wall-texture-background_130147-6139.jpg?semt=ais_hybrid&w=740');
+    background-size: cover;
+    /* background-color: rgba(63, 109, 86, 0.974); */
+   
+}
+.part1,.part2{
+    display: flex;
+gap: 3vw;
+
+}
+.part2{
+    top: 1;
+}
+.sec1,.sec2,.sec3,.se4,.sec4{
+    height: 30vh;
+    width: 50vh;
+    background-color: #130b0b;
+    display: flex;
+    background-image: url('background.png');
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.proj1,.proj2,.proj3,.proj4{
+     height: 25vh;
+    width: 45vh;
+    border-radius: 20px;
+     filter: grayscale(80%);
+      filter: blur(5px);
+}
+.proj1:hover,.proj2:hover,.proj3:hover{
+     filter: grayscale(0%);
+     
+}
+.sec1 h3,.sec2 h3,.sec3 h3{
+  color: #f7efef;
+  text-shadow: 5px 5px 10px black;
+    position: absolute;
+    font-size: 40px;
+font-family: 'old';
+  transition: opacity 0.5s ease; 
+}
+
+.sec1:hover h3,
+.sec2:hover h3 ,.sec3:hover h3{
+  opacity: 0; /* fade out smoothly */
+}
