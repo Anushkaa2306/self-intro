@@ -1,4 +1,61 @@
-var tl = gsap.timeline({scrollTrigger:{
+
+
+
+gsap.utils.toArray('.proj1, .proj2, .proj3').forEach((img, index) => {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 80%",
+                    toggleActions: "play none none reset"
+                },
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                delay: index * 0.3
+            });
+        });
+
+        // Scroll Indicator with Progress Bar
+        const progressBar = document.createElement('div');
+        progressBar.style.position = 'fixed';
+        progressBar.style.top = 0;
+        progressBar.style.left = 0;
+        progressBar.style.height = '4px';
+        progressBar.style.background = '#00ffcc';
+        progressBar.style.width = '0%';
+        progressBar.style.zIndex = 999;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrolled = (scrollTop / docHeight) * 100;
+            progressBar.style.width = `${scrolled}%`;
+        });
+
+        // Parallax Mousemove Effect
+        document.querySelector(".page1").addEventListener("mousemove", (e) => {
+            gsap.to(".box", {
+                x: (e.clientX - window.innerWidth / 2) * 0.02,
+                y: (e.clientY - window.innerHeight / 2) * 0.02,
+                duration: 0.5
+            });
+        });
+
+        // Typing Animation Effect
+        const typeText = "Creative Coder | UI/UX Designer | Developer";
+        const leftPara = document.querySelector(".left p");
+        let charIndex = 0;
+        function typeWriter() {
+            if (charIndex < typeText.length) {
+                leftPara.textContent += typeText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        leftPara.textContent = "";
+        typeWriter();
+        var tl = gsap.timeline({scrollTrigger:{
     trigger: ".page2",
     start: "0% 95%",
     end: "70% 50%",
@@ -42,44 +99,3 @@ var tl = gsap.timeline({scrollTrigger:{
     scrub: true,
     // markers: true,
 }})
-
-// const scene = new THREE.Scene();
-
-// const camera = new THREE.PerspectiveCamera(
-//   75,
-//   window.innerWidth / window.innerHeight,
-//   0.2,
-//   1000
-// );
-// camera.position.set(0, 2, 10); // Set camera location
-
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// document.body.appendChild(renderer.domElement);
-
-// const geometry = new THREE.SphereGeometry(4, 32, 16); // radius, widthSegments, heightSegments
-// const material = new THREE.MeshStandardMaterial({ color: 0x3366ff, metalness: 0.3, roughness: 0.5 });
-
-// const sphere = new THREE.Mesh(geometry, material);
-// sphere.position.set(-2, 2, -2);
-// scene.add(sphere);
-// // const controls = new OrbitControls( camera, renderer.domElement );
-// // controls.enableDamping=true;
-
-// const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-// scene.add( light );
-// const light2 = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-// scene.add( light2 );
-
-// const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-// directionalLight.position.set(5, 10, 7.5);
-// scene.add(directionalLight);
-
-// function animate() {
-//   requestAnimationFrame(animate);
-//   sphere.rotation.y += 0.01;
-//   sphere.rotation.x += 0.01;
-//   renderer.render(scene, camera);
-// }
-
-// animate();

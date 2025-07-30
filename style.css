@@ -9,11 +9,14 @@ body {
     height: 100%;
     width: 100%;
 }
-
+footer{
+    height:50vh;
+    margin-bottom: 10vh;
+}
 .main {
     height: 100vh;
     width: 100%;
-    background-color: rgb(20, 18, 22);
+    /* background-color: rgb(20, 18, 22); */
 }
 
 @font-face {
@@ -59,10 +62,14 @@ body {
     padding: 8vh 2vh;
     display: flex;
     padding: 0 70px;
+
     justify-content: center;
-    background: linear-gradient(10deg, #a5c9c2,#1c6b5a);
+    /* background: linear-gradient(10deg, #a5c9c2,#1c6b5a); */
+    background-image: url(back.png);
+/* background-blend-mode: overlay; */
+
  /* background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L25zMTk4ODAtaW1hZ2Uta3d2eWFhZXguanBn.jpg'); */
- opacity: 0.7;
+ /* opacity: 0.7; */
     background-size: cover;
     align-items: center;
    
@@ -80,7 +87,9 @@ body {
     /* border: 6px solid rgb(11, 19, 72); */
     color: rgb(249, 249, 251);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .right svg {
     position: absolute;
     justify-content: center;
@@ -92,9 +101,11 @@ body {
 }
 
 .right {
-    background-color: rgb(50, 52, 54);
-    background-image: url('backimage.png');
+    background-color: rgba(19, 16, 13, 0.686);
+    /* background-image: url('backimage.png'); */
     background-size: cover;
+    border-radius: 5px;
+
 
 
 }
@@ -111,8 +122,10 @@ body {
     width: 34%;
     height: 60%;
     position: absolute;
-    background-color: rgb(71, 132, 121);
+    background-color: rgb(54, 133, 198);
     display: flex;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+              0 6px 6px rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
 
@@ -163,16 +176,17 @@ body {
     width: 100%;
     padding: 8vh 2vh;
     background-color: rgb(50, 52, 54);
-      /* background-image: url('');
-    background-size: cover; */
+      background-image: url(image\ copy\ 2.png);
+    background-size: cover;
     padding: 20vw 30vw;
+    
 }
 
 .page2-img {
     height: 70vh;
     width: 55vh;
     position: absolute;
-    filter: grayscale(80%);
+    filter: grayscale(20%);
     z-index: 2;
     right: 6%;
     opacity: 2;
@@ -186,7 +200,7 @@ body {
     width: 55vh;
     position: absolute;
     /* filter: grayscale(80%); */
-    z-index: 2;
+    z-index: 1;
     right: 6%;
     opacity: 0.5;
     mix-blend-mode: multiply;
@@ -247,14 +261,14 @@ h2 p {
     color: rgb(247, 216, 62);
 
 }
-
 .page3 {
     height: 100vh;
     width: 100%;
     padding: 8vh 2vh;
     padding: 0 70px;
+    gap: 20vh;
     top: 10%;
-     background-image: url('https://img.freepik.com/premium-photo/abstract-green-wall-texture-background_130147-6139.jpg?semt=ais_hybrid&w=740');
+     background-image: url(page3.png);
     background-size: cover;
     /* background-color: rgba(63, 109, 86, 0.974); */
    
@@ -266,14 +280,19 @@ gap: 3vw;
 }
 .part2{
     top: 1;
+      margin-top: 10vh;
 }
 .sec1,.sec2,.sec3,.se4,.sec4{
     height: 30vh;
     width: 50vh;
-    background-color: #130b0b;
+    background-color: #85b3df;
     display: flex;
-    background-image: url('background.png');
+
+    /* background-image: url('background.png'); */
     justify-content: center;
+    border:1px solid #141516;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+              0 6px 6px rgba(0, 0, 0, 0.3);
     align-items: center;
     border-radius: 30px;
 }
@@ -289,16 +308,57 @@ gap: 3vw;
      filter: grayscale(0%);
      
 }
-.sec1 h3,.sec2 h3,.sec3 h3{
+.sec1 h3,.sec2 h3,.sec3 h3,.sec4 h3{
   color: #f7efef;
   text-shadow: 5px 5px 10px black;
     position: absolute;
     font-size: 40px;
 font-family: 'old';
+ filter: grayscale(80%);
   transition: opacity 0.5s ease; 
 }
 
+
 .sec1:hover h3,
-.sec2:hover h3 ,.sec3:hover h3{
+.sec2:hover h3 ,.sec3:hover h3,.sec4:hover h3{
   opacity: 0; /* fade out smoothly */
+  filter: grayscale(0%);
 }
+
+svg {
+      width: 400px;
+      height: 300px;
+      animation: slideIn .5s ease-out forwards;
+      z-index: 99;
+      margin-right: 80vh;
+     position: relative;
+    
+     
+    }
+.lap{
+    height: 50vh;
+    width: 40vh;
+    background-color: #85b3df;
+    position: absolute;
+    margin-left: 80vh;
+    margin-bottom: 1000vh;
+    
+}
+    path {
+      fill: #a280c6;
+      stroke: #520ae3;
+      stroke-opacity:0.8;
+      stroke-width: 3;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(300px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
